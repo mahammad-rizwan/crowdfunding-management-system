@@ -15,11 +15,11 @@ The **Crowdfunding Management System (CFMS)** is a comprehensive platform that s
 ## Technologies Used:
 
 - **Backend**: Node.js, Express.js
-- **Database**: MySQL
+- **Database**: MySQL ,MongoDB
 - **Authentication**: JWT, bcrypt
 - **Blockchain**: Ethereum, Solidity, MetaMask
 - **Payment Integration**: UPI, Credit/Debit Cards, DeFi
-- **Frontend**: HTML, CSS, JavaScript (React.js Optional)
+- **Frontend**: HTML, CSS, JavaScript ,ejs templates
 
 ## Installation:
 
