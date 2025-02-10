@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>waitingList</title>
+    <link rel="stylesheet" href="/css/waitinglist.css">  
+</head>
+<body>
+    <%- include('partials/adminheader') %>
+    <%- include('partials/adminnavbar') %>
+
+    <div class="waitinglist">
+        
+        <div class="card-container">
+            <div class="card">
+                <h2>Waiting List Campaigns</h2>
+                
+                
+                <ul id="waiting-list">
+                    <% if (waitingListCampaigns && waitingListCampaigns.length > 0) { %>
+                        <% waitingListCampaigns.forEach(function(campaign) { %>
+                            <li class="campaign-item">
+                                <div>
+                                    <h3><%= campaign.title %></h3>
+                                    <p><%= campaign.description %></p>
+                                    <p><strong>Goal Amount: </strong><%= campaign.goalAmount %></p>
+                                </div>
+                                <div class="action-buttons">
+                                    <form action="/admin/campaigns/<%= campaign.title %>/accept" method="POST" style="display:inline;">
+                                        <button class="btn accept" type="submit">Accept</button>
+                                    </form>
+                                    <form action="/admin/campaigns/<%= campaign.title %>/reject" method="POST" style="display:inline;">
+                                        <button class="btn reject" type="submit">Reject</button>
+                                    </form>
+                                </div>
+                            </li>
+                        <% }); %>
+                    <% } else { %>
+                        <li>No campaigns are in the waiting list.</li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

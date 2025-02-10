@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donations List</title>
+  <link rel="stylesheet" href="/css/donationList.css">
+</head>
+<body>
+  <%- include('partials/adminheader') %>
+  <%- include('partials/adminnavbar') %>
+
+  <div class="donation-page">
+    <h1>All Donations</h1>
+
+    <table class="donation-table">
+      <thead>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Campaign Title</th>
+          <th>Donor Name</th>
+          <th>Amount (₹)</th>
+          <th>Payment Method</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (donations.length === 0) { %>
+          <tr>
+            <td colspan="6" class="no-donations">No donations found.</td>
+          </tr>
+        <% } else { %>
+          <% donations.forEach(donation => { %>
+            <tr>
+              <td><%= donation.transaction_id %></td>
+              <td><%= donation.campaign_title %></td>
+              <td><%= donation.donar_name %></td>
+              <td>₹<%= donation.amount %></td>
+              <td><%= donation.payment_method %></td>
+              <td><%= new Date(donation.timestamp).toLocaleString() %></td>
+            </tr>
+          <% }); %>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

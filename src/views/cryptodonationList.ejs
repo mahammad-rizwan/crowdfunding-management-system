@@ -1,0 +1,50 @@
+<!-- crypto donationList.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation List</title>
+  <link rel="stylesheet" href="/css/cryptodonationList.css">
+</head>
+<body>
+    <%- include('partials/adminheader') %>
+    <%- include('partials/adminnavbar') %>
+
+
+    <div class="donation-page">
+  <h1>All Crypto Donations</h1>
+  <table class="donation-table">
+    <thead>
+      <tr>
+        <th>Campaign Title</th>
+        <th>Donor Address</th>
+        <th>Amount in Ether</th>
+        <th>Transaction Hash</th>
+        <th>Timestamp</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <% if (cryptodonations.length === 0) { %>
+            <tr>
+              <td colspan="6" class="no-donations">No donations found.</td>
+            </tr>
+          <% } else { %>
+      <% cryptodonations.forEach(donation => { %>
+        <tr>
+        <td><%= donation.campaign_title %></td>
+          <td><%= donation.donor_address %></td>
+          <td><%= donation.amount_in_ether %></td>
+          <td><%= donation.transaction_hash %></td>
+          <td><%= donation.created_at ? donation.created_at.toLocaleString() : donation._id.getTimestamp().toLocaleString() %></td>          
+        </tr>
+      <% }); %>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

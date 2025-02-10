@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= campaign.title %> - Campaign Details</title>
+    <link rel="stylesheet" href="/css/campaign.css">
+    
+    <!-- Include ethers.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/navbar') %>
+
+    <div class="campaign-details-container">
+        <div class="left-section">
+            <div class="campaign-images">
+                <% const campaignPhoto = allPhotos.find(photo => photo.campaignTitle === campaign.title); %>
+                <% if (campaignPhoto) { %>
+                    <img src="<%= campaignPhoto.photoUrl %>" alt="<%= campaign.title %>" class="campaign-img">
+                <% } else { %>
+                    <img src="/images/default.jpg" alt="Default Image" class="campaign-img">
+                <% } %>
+            </div>
+        </div>
+        
+        <div class="right-section">
+          <input type="hidden" id="campaignTitle" value="<%= campaign.title %>">
+          <input type="hidden" id="requiredAmount" value="<%= campaign.goalAmount-campaign.raisedAmount %>">
+            <h1 class="campaign-title" ><%= campaign.title %></h1>
+            
+            <div class="campaign-progress">
+                <p>Goal Amount: <strong>₹<%= campaign.goalAmount %></strong></p>
+                <p>Raised Amount: <strong>₹<%= campaign.raisedAmount %></strong></p>
+                <p>Required Amount: <strong>₹<%= campaign.goalAmount-campaign.raisedAmount %></strong></p>
+                <div class="progress-bar">
+                    <% const percentage = campaign.goalAmount > 0 ? (campaign.raisedAmount / campaign.goalAmount) * 100 : 0; %>
+                    <div class="progress" style="width: <%= Math.min(percentage, 100) %>%"></div>
+                    <span class="percentage"><%= Math.round(percentage) %>%</span>
+                </div>     
+            </div>
+            
+            <div class="donate-input">
+              <h3>Traditional Donation</h3>
+                <form action="/paymentGateway/<%= campaign.title %>" method="POST" class="donate-form">
+                    <input type="hidden" name="campaignTitle" value="<%= campaign.title %>">
+                    <input type="number" name="amount" placeholder="₹   Enter Amount" required min="1" max="<%= campaign.goalAmount-campaign.raisedAmount %>">
+                    <button type="submit" class="donate-now-btn">Donate Now ➔</button>
+                </form>
+                </div>
+        </div>
+    </div>
+
+
+       <div class="crypto-container">
+                <div class="crypto-donate-input">
+                  <div>
+                  <h3>Crypto Donation [Ethereum]</h3>
+                </div>
+                    <div class="ether-input">
+                        <input type="number" id="ethAmount" placeholder="Enter Donation Amount (ETH)" required step="0.001" min="0.000001">
+                    </div>
+                    <div class="inr-input">
+                        <input type="text" id="inrAmount" placeholder="Converted Amount (₹)" readonly>
+                    </div>
+                    <div>
+                    <button class="crypto-donate-now-btn" onclick="donate()">Donate with MetaMask ➔</button> 
+                    <p id="status"></p>
+                  </div>
+                </div>
+              </div>
+
+
+    <div class="campaign-description">
+        <p><%= campaign.description %></p>
+    </div>
+
+    <div class="donation-list">
+        <h2>List of Donations</h2>
+        <p>Number of people donated: <%= donations.length %></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Donor name</th>
+                    <th>Transaction ID</th>
+                    <th>Amount</th>
+                    <th>Date & Time (India Standard Time)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% donations.forEach(donation => { %>
+                    <tr>
+                        <td><%= donation.donar_name %></td>
+                        <td><%= donation.transaction_id %></td>
+                        <td>₹<%= donation.amount %></td>
+                        <td><%= new Date(donation.timestamp).toLocaleString() %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="/js/cryptoCampaign.js"></script>
+      
+</body>
+
+</html>

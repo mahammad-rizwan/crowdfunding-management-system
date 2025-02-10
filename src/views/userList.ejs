@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <link rel="stylesheet" href="/css/userList.css">
+</head>
+<body>
+  <%- include('partials/adminheader') %>
+  <%- include('partials/adminnavbar') %>
+
+  <div class="user-list-page">
+    <h1>User List</h1>
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (users.length === 0) { %>
+          <tr>
+            <td colspan="4" class="no-users">No users found.</td>
+          </tr>
+        <% } else { %>
+          <% users.forEach(user => { %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.contactNumber || 'N/A' %></td>
+              <td>
+                <form action="/admin/delete-user/<%= user.email %>" method="POST" class="delete-form">
+                  <button type="submit" class="delete-btn">
+                    <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                  </button>
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

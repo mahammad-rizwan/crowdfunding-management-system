@@ -1,0 +1,36 @@
+
+<nav class="navbar">
+    
+      
+      <div class="navbar-logo">
+        <img src="/images/logo.jpeg" alt="Logo">
+    </div>
+    <a href="/user/home" class="navbar-logo-title">CrowdFund</a>
+
+
+    <div class="navbar-container">
+      
+      <ul class="navbar-links">
+        <li><a href="/user/home">Home</a></li>
+        <li><a href="/createCampaign">Start campaign</a></li>
+        <li><a href="/ongoingCampaigns">Explore campaigns</a></li>
+        <li><a href="/about">About Us</a></li>
+      </ul>
+
+        <div class="profile-menu">
+          <img src="/images/user-icn.png" alt="Profile" class="profile-logo" onclick="toggleProfileMenu()">
+          <div class="dropdown-menu" id="profileDropdown">
+            <form id="profileForm" action="/myprofile" method="post">
+            </form>           
+            <a href="#" onclick="document.getElementById('profileForm').submit();">Go to My Profile</a>      
+            <a href="/user/logout">Logout</a>
+          </div>
+        </div>
+      
+  
+
+    </div>
+  </nav>
+
+  <script src="/js/profile.js"></script>
+  

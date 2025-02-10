@@ -1,0 +1,87 @@
+
+.admin-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .admin-header h1 {
+    color: #0f4881;
+  }
+
+  h2{
+    color: #0f4881;
+  }
+  
+  .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card h2 {
+    color: #333;
+  }
+  
+  .card p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .card button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .card button:hover {
+    background-color: #0056b3;
+  }
+  
+  .card.waiting-list {
+    background-color: #ffe0b2;
+  }
+  
+  .card.edit-campaigns {
+    background-color: #cce5ff;
+  }
+  
+  .card.user-management {
+    background-color: #cce5ff;
+  }
+  
+  .card.recent-donations {
+    background-color: #ffe0b2;
+  }
+  .card.crypto-donations {
+    background-color: #ffe0b2;
+  }
+  .card.add-admin {
+    background-color: #cce5ff;
+    
+  }
+
+  

@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  .campaign-page h1 {
+    text-align: center;
+    background-color: #e6c545;
+    margin : 20px 100px;
+    font-size: 2rem;
+    color: #0f4881;
+  }
+  
+  .campaign-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .campaign-card {
+    background-color: #dae7f3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .campaign-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .campaign-img {
+    width: 400px;
+    height: 200px; 
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+
+  .campaign-details h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #00796b;
+  }
+  
+  .campaign-details p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .action-form {
+    display: inline-block;
+  }
+  
+  .delete-btn, .complete-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c; 
+  }
+  
+  .complete-btn {
+    background-color: #27ae60;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b; 
+  }
+  
+  .complete-btn:hover {
+    background-color: #1e8449;
+  }
+
+  .campaign-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+  }
+  
+
+  .campaign-card {
+    background-color: #dae7f3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(45% - 20px);
+    max-width: 400px; 
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .campaign-card:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .campaign-card {
+      flex: 1 1 calc(100% - 20px); 
+    }
+  }
+  
+  .campaign-img {
+    width: 100%; 
+    height: 200px; 
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  
+ 
+@media (max-width: 768px) {
+    .campaign-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

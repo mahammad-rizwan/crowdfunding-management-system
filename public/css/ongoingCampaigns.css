@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.campaign-page h1 {
+  text-align: center;
+  background-color: #e6c545;
+  margin : 20px 100px;
+  font-size: 2rem;
+  color: #0f4881;
+}
+
+.campaign-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.campaign-card {
+  background-color: #dae7f3;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.campaign-card:hover {
+  transform: scale(1.05);
+}
+
+.campaign-img {
+  width: 400px;
+  height: 200px; 
+  border-radius: 8px;
+  object-fit: cover; 
+}
+
+
+
+.campaign-details h2 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #00796b;
+}
+
+.campaign-details p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.donate-btn {
+  display: inline-block;
+  background-color: #00796b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.donate-btn:hover {
+  background-color: #004d40;
+}
+
+.no-campaigns {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .campaign-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

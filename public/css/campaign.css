@@ -1,0 +1,268 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.campaign-details-container {
+  display:flex;
+  margin-bottom: -0px;
+}
+
+.left-section, .right-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.campaign-images {
+  width: 400px;
+  margin-left: 140px;
+  margin-top: 70px;
+  transform: scale(1.4 ,1.4);
+  
+}
+
+.campaign-img {
+  width: 400px;
+  border-radius: 8px;
+  border: 4px solid aqua;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  
+}
+
+.campaign-title {
+  
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 70%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+  min-width: 20px;
+}
+
+.percentage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.donation-details {
+  margin: 20px 0;
+}
+
+.donate-form {
+  margin-top: 20px;
+}
+
+.donate-form input[type="number"] {
+  width:200px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #292929;
+  border-radius: 10px;
+}
+
+.donate-now-btn {
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.donate-now-btn:hover {
+  background-color: #e91e63;
+}
+
+
+.campaign-description p{
+  font-size: large;
+  line-height: 2;
+  margin-top: -40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: #242323;
+}
+
+
+
+.donation-list {
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donation-list h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.donation-list p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead tr {
+  background: #4CAF50;
+  color: white;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+
+tbody tr:nth-child(odd) {
+  background: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+  background: #ffffff;
+}
+
+
+tbody tr:hover {
+  background: #d1f0d1;
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+  table, th, td {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+    display: block;
+    border-bottom: 2px solid #eee;
+  }
+
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+.crypto-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  margin-top: -61spx; /* Move the section upwards */
+  margin-bottom: 30px;
+}
+
+.crypto-donate-input {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  padding: 4px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  flex-wrap: nowrap; /* Ensure all items stay in one line */
+}
+
+.crypto-donate-input h3 {
+  width: 100%;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.ether-input, .inr-input {
+  width: 30%; /* Adjust width to fit all elements in one line */
+  display: flex;
+  justify-content: center;
+}
+
+.ether-input input, .inr-input input {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.ether-input input:focus, .inr-input input:focus {
+  outline: none;
+  border-color: #0e0f0e;
+  box-shadow: 0 0 5px rgba(13, 13, 13, 0.5);
+}
+
+.crypto-donate-now-btn {
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Remove top margin to align with inputs */
+}
+
+.crypto-donate-now-btn:hover {
+  background-color: #e91e63;
+}
+
+#status {
+  font-size: 16px;
+  color: #ff6347;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+}

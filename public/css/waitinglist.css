@@ -1,0 +1,100 @@
+h1{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2rem;
+    color: #0f4881;
+}
+
+.waitinglist {
+    background-color:#ecf0f1;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+#waiting-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.campaign-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.campaign-item:last-child {
+    border-bottom: none;
+}
+
+.campaign-item h3 {
+    margin: 0 0 5px;
+}
+
+.campaign-item p {
+    margin: 5px 0;
+    word-wrap: break-word; 
+    text-align: justify; 
+    margin-right:10px ;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn.accept {
+    background-color: #4caf50;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn.accept:hover {
+    background-color: #45a049;
+}
+
+.btn.reject {
+    background-color: #f44336;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn.reject:hover {
+    background-color: #d32f2f;
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}

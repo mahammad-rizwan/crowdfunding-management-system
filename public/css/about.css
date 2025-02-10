@@ -1,0 +1,116 @@
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+
+.about-us-header {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.about-us-header h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.about-us-header p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.our-mission {
+  background-color: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.our-mission h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.our-mission p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+
+
+.meet-the-team {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+
+.meet-the-team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.team-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.team-card {
+  width: 280px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.team-card p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.team-card p:last-child {
+  font-size: 1rem;
+  color: #555;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #0077b5; 
+  font-weight: bold;
+}
+
+.linkedin-link:hover {
+  color: #005582; 
+}
+
+.linkedin-link i {
+  font-size: 18px;
+}

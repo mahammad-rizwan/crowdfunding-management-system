@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile</title>
+  <link rel="stylesheet" href="/css/myProfile.css">
+</head>
+<body>
+
+    <%- include('partials/header') %>
+    <%- include('partials/navbar') %>
+
+  <div class="profile-container">    
+    <section class="user-details">
+      <h2>Personal Information</h2>
+      <div class="info">
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <p><strong>Address:</strong> <%= user.address || 'Not provided' %></p>
+        <p><strong>Phone:</strong> <%= user.contactNumber || 'Not provided' %></p>
+      </div>
+    </section>
+    
+    <section class="donations">
+      <h2>Your Donations</h2>
+      <table class="donation-table">
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Campaign Title</th>
+            <th>Donated with Name</th>
+            <th>Amount (₹)</th>
+            <th>Payment Method</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (donations.length === 0) { %>
+            <tr>
+              <td colspan="6" class="no-donations">No donations found.</td>
+            </tr>
+          <% } else { %>
+            <% donations.forEach(donation => { %>
+              <tr>
+                <td><%= donation.transaction_id %></td>
+                <td><%= donation.campaign_title %></td>
+                <td><%= donation.donar_name %></td>
+                <td>₹<%= donation.amount %></td>
+                <td><%= donation.payment_method %></td>
+                <td><%= new Date(donation.timestamp).toLocaleString() %></td>
+              </tr>
+            <% }); %>
+          <% } %>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- New Section for Campaigns Created by User -->
+    <section class="user-campaigns">
+      <h2>Your Created Campaigns</h2>
+      <table class="campaign-table">
+        <thead>
+          <tr>
+            <th>Campaign Title</th>
+            <th>Goal Amount (₹)</th>
+            <th>Start Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (campaigns.length === 0) { %>
+            <tr>
+              <td colspan="4" class="no-campaigns">You have not created any campaigns yet.</td>
+            </tr>
+          <% } else { %>
+            <% campaigns.forEach(campaign => { %>
+              <tr>
+                <td><%= campaign.title %></td>
+                <td>₹<%= campaign.goalAmount %></td>
+                <td><%= new Date(campaign.createdDate).toLocaleDateString() %></td>
+                <td><%= campaign.status %></td>
+              </tr>
+            <% }); %>
+          <% } %>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>

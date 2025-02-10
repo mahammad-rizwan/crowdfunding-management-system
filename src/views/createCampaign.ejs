@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a Campaign</title>
+  <link rel="stylesheet" href="/css/createCampaign.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <%- include('partials/navbar') %>
+  <section class="start-campaign">
+    <div class="form-container">
+      <h2>Start a New Campaign</h2>
+      <form action="/createCampaign" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title">Campaign Title</label>
+          
+          <input type="text" id="title" name="title" pattern="[a-zA-Z0-9\s]*"
+          title="Only letters, numbers, and spaces are allowed."
+          required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Campaign Description (Minimum 250 words)</label>
+          <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="goalAmount">Goal Amount (in INR)</label>
+          <input type="number" id="goalAmount" name="goalAmount" required min="1">
+        </div>
+
+        <div class="form-group">
+          <label for="campaign-photos">Upload Campaign Photos</label>
+          <input 
+            type="file" 
+            id="campaign-photos" 
+            name="photos" 
+            accept="image/*" 
+            multiple 
+            required
+          >
+          <!-- <small class="form-text text-muted">
+            You can upload between 1 and 10 images.
+          </small> -->
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Campaign</button>
+      </form>
+    </div>
+  </section>
+  <%- include('partials/footer') %>
+</body>
+</html>

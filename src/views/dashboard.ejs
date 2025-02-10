@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css"> 
+</head>
+
+<body>
+    <%- include('partials/adminheader') %>
+    <%- include('partials/adminnavbar') %>
+  <div class="admin-dashboard">
+    <header class="admin-header">
+      <h1>Admin Dashboard</h1>
+    </header>
+
+    <div class="dashboard-cards">
+      
+      <div class="card waiting-list">
+        <h2>Waiting List Campaigns</h2>
+        <p>View and approve campaigns that are awaiting approval.</p>
+        <form action="/admin/waitinglist" >
+            <button type="submit">View Campaigns</button>
+          </form>
+      </div>
+
+      
+      <div class="card edit-campaigns">
+        <h2>Edit Ongoing Campaigns</h2>
+        <p>Manage and edit ongoing campaigns.</p>
+        <form action="/admin/editCampaign" >
+            <button type="submit">Edit Campaigns</button>
+          </form>
+      </div>
+
+      
+      <div class="card user-management">
+        <h2>User Management</h2>
+        <p>View and manage users. Delete if necessary.</p>
+        <form action="/admin/userlist" >
+            <button type="submit">Manage Users</button>
+          </form>
+        
+      </div>
+
+      
+      <div class="card recent-donations">
+        <h2>Recent Traditional Donations</h2>
+        <p>View the most recent donations made to campaigns.</p>
+        <form action="/admin/donationlist" >
+            <button type="submit">View Donations</button>
+          </form>
+        
+      </div>
+      <div class="card crypto-donations">
+        <h2>Recent Crypto Donations</h2>
+        <p>View the crypto donations made to campaigns.</p>
+        <form action="/admin/cryptodonationlist" >
+            <button type="submit">View Donations</button>
+          </form>  
+      </div>
+
+      <div class="card add-admin">
+        <h2>Add Admin</h2>
+        <p>Admin management.</p>
+        <form action="/admin/addadmins" >
+            <button type="submit">Add</button>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+  
+  <%- include('partials/footer') %>
+
+</body>
+</html>

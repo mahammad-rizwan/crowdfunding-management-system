@@ -1,0 +1,27 @@
+
+<nav class="navbar">
+    
+    <div class="navbar-logo">
+      <img src="/images/logo.jpeg" alt="Logo">
+  </div>
+  <a href="/admin/dashboard" class="navbar-logo-title">CrowdFund</a>
+
+
+  <div class="navbar-container">
+   
+    <ul class="navbar-links">
+      <li><a href="/admin/dashboard">Dashboard</a></li>
+      <li><a href="/admin/addadmins">Add Admins</a></li>
+    </ul>
+   
+    <div class="profile-menu">
+      <img src="/images/user-icn.png" alt="Profile" class="profile-logo" onclick="toggleProfileMenu()">
+      <div class="dropdown-menu" id="profileDropdown">
+        
+        <a href="/admin/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script src="/js/profile.js"></script>

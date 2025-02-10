@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ongoing Campaigns</title>
+  <link rel="stylesheet" href="/css/ongoingCampaigns.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <%- include('partials/navbar') %>
+
+  <div class="campaign-page">
+    <h1>All Campaigns</h1>
+    <div class="campaign-container">
+      <% if (ongoingCampaigns.length === 0) { %>
+        <p class="no-campaigns">No ongoing campaigns at the moment.</p>
+      <% } else { %>
+        <% ongoingCampaigns.forEach(campaign => { %>
+          <div class="campaign-card">
+            <div class="campaign-content">
+              <% const campaignPhoto = allPhotos.find(photo => photo.campaignTitle === campaign.title); %>
+              <% if (campaignPhoto) { %>
+                <img src="<%= campaignPhoto.photoUrl %>" alt="<%= campaign.title %>" class="campaign-img">
+              <% } else { %>
+                <img src="/images/default.jpg" alt="Default Image" class="campaign-img">
+              <% } %>
+              <div class="campaign-details">
+                <h2><%= campaign.title %></h2>
+                <p><%= campaign.description.substring(0, 150) %>...</p>
+                <p><strong>Required Amount:</strong> ₹<%= campaign.goalAmount-campaign.raisedAmount %></p>
+                <a href="/campaign/<%= campaign.title %>" class="donate-btn">Donate Now →</a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

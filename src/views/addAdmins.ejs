@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Signup Page">
+    <meta name="author" content="Modern Signup Design">
+    <title>add admin Page</title>
+    <link rel="stylesheet" href="/css/addAdmins.css">
+
+</head>
+
+<body>
+    <%- include('partials/adminheader') %>
+    <%- include('partials/adminnavbar') %>
+    <div class="admin-container">
+        <div class="admin-card">
+            <!-- Header -->
+            <div class="admin-header">
+                <h1>Create Admin Account</h1>
+                
+            </div>
+
+            <form class="admin-form" method="POST" action="/addadmins">
+                <div class="form-group">
+                    <label for="name"><strong>Full Name</strong></label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><strong>Email Address</strong></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber"><strong>Phone Number</strong></label>
+                    <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><strong>Password</strong></label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                </div> -->
+                <button type="submit" class="btn-signup">Add</button>
+            </form>
+
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <link rel="stylesheet" href="/css/unauthorized.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Access Denied</h2>
+        <p>You need to log in to access this page.</p>
+        <button onclick="redirectToLogin()">Please login to access</button>
+    </div>
+
+    <script>
+        function redirectToLogin() {
+            window.location.href = "/login"; // Redirects to login page
+        }
+    </script>
+</body>
+</html>

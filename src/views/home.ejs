@@ -1,0 +1,64 @@
+
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+<link rel="stylesheet" href="/css/home.css">
+
+
+<main>
+    <section class="hero">
+        <div class="hero-container">
+          <h1 class="hero-title">Support a Cause That Matters</h1>
+          <p class="hero-subtitle">
+            Join us in making a difference by supporting impactful social campaigns.
+          </p>
+          <div class="hero-cta">
+            <a href="/createCampaign" class="btn btn-primary">Start a Campaign</a>
+            <a href="/ongoingCampaigns" class="btn btn-secondary">Explore Campaigns</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="/images/hero_img1.jpg" alt="Crowdfunding illustration" />
+        </div>
+      </section>
+
+      
+      <section class="campaigns">
+        <div class="campaigns-header">
+          <h2>Ongoing Campaigns</h2>
+          <p>Support the causes that matter the most!</p>
+        </div>
+        <div class="campaign-container">
+          <% ongoingCampaigns.slice(0, 3).forEach(campaign => { %>
+            <div class="campaign-card">
+              <div class="campaign-content">
+                <% const campaignPhoto = allPhotos.find(photo => photo.campaignTitle === campaign.title); %>
+                <% if (campaignPhoto) { %>
+                  <img src="<%= campaignPhoto.photoUrl %>" alt="<%= campaign.title %>" class="campaign-img">
+                <% } else { %>
+                  <img src="/images/default.jpg" alt="Default Image" class="campaign-img">
+                <% } %>
+                <div class="campaign-details">
+                  <h2><%= campaign.title %></h2>
+                  <p><%= campaign.description.substring(0, 150) %>...</p>
+                  <p><strong>Required Amount:</strong> ₹<%= campaign.goalAmount-campaign.raisedAmount %></p>
+                  <a href="/campaign/<%= campaign.title %>" class="donate-btn">Donate Now →</a>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+        
+        <div class="view-more-container">
+          <a href="/ongoingCampaigns" class="view-more-btn">View More Campaigns →</a>
+        </div>
+        
+        
+      </section>
+      
+        
+</main>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>
