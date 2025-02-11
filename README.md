@@ -32,5 +32,5 @@ The **Crowdfunding Management System (CFMS)** is a comprehensive platform that s
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/crowdfunding-management-system.git
+   git clone https://github.com/mahammad-rizwan/crowdfunding-management-system.git
    cd crowdfunding-management-system
